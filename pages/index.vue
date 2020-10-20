@@ -1,20 +1,35 @@
 <template>
 	<background>
-		<div>
-			Hello amte
-		</div>
-		<div>
-			Hello amte
-		</div>
-		<div>
-			Hello amte
-		</div>
-		<div>
-			Hello amte
-		</div>
-		<div>
-			Hello amte
-		</div>
+		<base-typography
+			class="w-screen"
+			align="right"
+			type="header"
+			color="white"
+			weight="bold"
+			>Test</base-typography
+		>
+		<base-typography
+			class="w-screen"
+			align="right"
+			type="subtitle"
+			color="white"
+			>Test</base-typography
+		>
+		<base-typography
+			class="w-screen"
+			align="center"
+			type="normal"
+			color="white"
+			>Test</base-typography
+		>
+		<base-typography
+			class="w-screen"
+			align="center"
+			type="small"
+			color="white"
+			weight="light"
+			>Test</base-typography
+		>
 	</background>
 </template>
 
@@ -27,6 +42,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/assets/scss/theming.scss';
-</style>
+<style lang="scss" scoped></style>

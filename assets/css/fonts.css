@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "AkzidenzGroteskBQ";
+    src: local("AkzidenzGroteskBQ"),
+        url(/fonts/akzidenzgrotesk-regular-webfont.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: "AkzidenzGroteskBQ Bold";
+    src: local("AkzidenzGroteskBQ Bold"),
+        url(/fonts/akzidenzgrotesk-bold-webfont.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "AkzidenzGroteskBQ Light";
+    src: local("AkzidenzGroteskBQ Light"),
+        url(/fonts/akzidenzgrotesk-light-webfont.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: "AkzidenzGroteskBQ Medium";
+    src: local("AkzidenzGroteskBQ Medium"),
+        url(/fonts/akzidenzgrotesk-medium-webfont.ttf) format("truetype");
+}

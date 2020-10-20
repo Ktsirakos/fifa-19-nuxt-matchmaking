@@ -36,18 +36,15 @@ module.exports = {
 	/*
 	 ** Global CSS
 	 */
-	css: ['~assets/scss/style.scss'],
-
-	/*
-	 ** Style recourses for importing theme in Nuxt app
-	 */
-	styleResources: {
-		scss: ['~assets/scss/theming.scss']
-	},
+	css: ['~assets/scss/style.scss', '~assets/css/fonts.css'],
 	/*
 	 ** Plugins to load before mounting the App
 	 */
-	plugins: [],
+	plugins: [
+		{
+			src: '~plugins/global-components.js'
+		}
+	],
 	/*
 	 ** Nuxt.js dev-modules
 	 */
@@ -62,8 +59,12 @@ module.exports = {
 	 */
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
-		'@nuxtjs/axios'
+		'@nuxtjs/axios',
+		'@nuxtjs/style-resources'
 	],
+	styleResources: {
+		scss: ['@/assets/scss/theming.scss']
+	},
 	/*
 	 ** Axios module configuration
 	 ** See https://axios.nuxtjs.org/options
