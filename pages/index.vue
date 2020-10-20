@@ -1,43 +1,16 @@
 <template>
 	<background>
-		<base-typography
-			class="w-screen"
-			align="right"
-			type="header"
-			color="white"
-			weight="bold"
-			>Test</base-typography
-		>
-		<base-typography
-			class="w-screen"
-			align="right"
-			type="subtitle"
-			color="white"
-			>Test</base-typography
-		>
-		<base-typography
-			class="w-screen"
-			align="center"
-			type="normal"
-			color="white"
-			>Test</base-typography
-		>
-		<base-typography
-			class="w-screen"
-			align="center"
-			type="small"
-			color="white"
-			weight="light"
-			>Test</base-typography
-		>
+		<base-navbar class="w-full" />
 	</background>
 </template>
 
 <script>
 import Background from '@/components/background'
+import BaseNavbar from '@/components/BaseComponents/BaseNavbar'
 export default {
 	components: {
-		Background
+		Background,
+		BaseNavbar
 	}
 }
 </script>
