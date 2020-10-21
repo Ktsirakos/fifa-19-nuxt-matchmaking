@@ -86,6 +86,10 @@ export default {
 		color: $primary;
 	}
 
+	&.dark-grey {
+		color: $dark-grey;
+	}
+
 	@import '@/assets/scss/components/BaseComponents/_base-typography-alignment.scss';
 	@import '@/assets/scss/components/BaseComponents/_base-typography-font-weight.scss';
 	@import '@/assets/scss/components/BaseComponents/_base-typography-font-sizes.scss';

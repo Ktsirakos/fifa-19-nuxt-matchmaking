@@ -14,7 +14,7 @@
 			subtitle="We’ve found a compatible opponent for you to play Squad Battles with in FIFA 19"
 			caption="By tapping accept, you agree to play a match that may last for up to 30 minutes."
 		/>
-		<footer-bar :searching="searching" />
+		<footer-bar :searching="searching" @cancel="$emit('cancel')" />
 	</div>
 </template>
 

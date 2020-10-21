@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import settingsObject from './settings.json'
+import lobbySettings from '@/assets/lobby-settings.json'
 export default {
 	data() {
 		return {
-			settings: settingsObject
+			settings: lobbySettings
 		}
 	}
 }

@@ -10,40 +10,37 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
 	props: {
 		image: {
 			type: String,
 			default: '/Image.png'
-		},
-		lobby: {
-			type: Boolean,
-			default: true
-		}
-	},
-	data() {
-		return {
-			searching: true
 		}
 	},
 	computed: {
 		...mapGetters({
-			searching: 'matchmaking/searching'
+			searching: 'matchmaking/searching',
+			lobby: 'matchmaking/lobby'
 		})
 	},
 	created() {
 		this.$nuxt.$on('found-match', () => {
-			this.searching = false
+			this.setSearching(false)
 		})
 
 		this.$nuxt.$on('start-search', () => {
-			this.searching = true
+			this.setSearching(true)
 		})
 	},
 	beforeDestroy() {
 		this.$nuxt.$off('found-match')
 		this.$nuxt.$off('start-search')
+	},
+	methods: {
+		...mapMutations({
+			setSearching: 'matchmaking/setSearching'
+		})
 	}
 }
 </script>

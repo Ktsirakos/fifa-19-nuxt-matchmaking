@@ -12,12 +12,12 @@
 			type="label"
 			color="white"
 			weight="reqular"
-			>4001 in queue</base-typography
+			>4,001 in queue</base-typography
 		>
 		<base-icon-button
 			class="w-1/6 flex justify-end self-center"
 			icon="/icons/right-arrow.svg"
-			@click="startSearching"
+			@click="$emit('click')"
 		/>
 	</div>
 </template>
