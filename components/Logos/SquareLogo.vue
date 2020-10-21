@@ -1,11 +1,16 @@
 <template>
-	<div class="flex justify-center">
+	<black-box>
 		<img src="@/assets/ginfinityLogo.svg" />
-	</div>
+	</black-box>
 </template>
 
 <script>
-export default {}
+import BlackBox from '@/components/BlackBox'
+export default {
+	components: {
+		BlackBox
+	}
+}
 </script>
 
 <style lang="scss" scoped>

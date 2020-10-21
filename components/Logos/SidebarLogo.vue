@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<button @click="$emit('click')">
 		<img src="@/assets/sidebarIcon.svg" />
-	</div>
+	</button>
 </template>
 
 <script>
