@@ -1,3 +1,15 @@
+
+# Gfinity Assignment 2020
+This 3-screen application was implemented with the use of 22 different components.
+
+Please clone the "master branch" and follow the instructions below to test the application.
+### Author: Konstantinos Tsirakos
+
+
+--------------------------
+--------------------------
+--------------------------
+### Original Message
 # Gfinity Front-end Assignment
 
 Thank you for your time thus far interviewing with us. We've created this assignment to resemble something we work on routinely.

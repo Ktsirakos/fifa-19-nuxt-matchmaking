@@ -17,17 +17,7 @@ export default {
 		 */
 		type: {
 			type: String,
-			default: 'normal',
-			validator: value => {
-				return [
-					'header',
-					'normal',
-					'subtitle',
-					'subtitle-small',
-					'small',
-					'label'
-				].includes(value)
-			}
+			default: 'normal'
 		},
 		/**
 		 * Responsible for the color of the typography
@@ -49,10 +39,7 @@ export default {
 		 */
 		weight: {
 			type: String,
-			default: 'regular',
-			validator: value => {
-				return ['bold', 'regular', 'medium', 'light'].includes(value)
-			}
+			default: 'regular'
 		},
 		/**
 		 * In case the user needs to register a new color once

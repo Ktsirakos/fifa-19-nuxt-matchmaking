@@ -24,23 +24,17 @@ export default {
 	},
 	mounted() {
 		this.setLobby(false)
+
+		// Timeout  for testing purposes which finds a match in 3 seconds
 		this.timeOut = setTimeout(() => {
-			this.toggle()
+			this.searching = false
+			this.$nuxt.$emit('found-match')
 		}, 3000)
 	},
 	methods: {
 		...mapMutations({
 			setLobby: 'matchmaking/setLobby'
 		}),
-		toggle() {
-			if (this.searching) {
-				this.searching = false
-				this.$nuxt.$emit('found-match')
-			} else {
-				this.searching = true
-				this.$nuxt.$emit('start-search')
-			}
-		},
 		goToLobby() {
 			clearTimeout(this.timeOut)
 			this.$router.push('matchmaking-lobby')

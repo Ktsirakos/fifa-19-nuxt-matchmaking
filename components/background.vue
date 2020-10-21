@@ -3,8 +3,13 @@
 		<div class="overlay w-full">
 			<slot></slot>
 		</div>
+
+		<!-- IN CASE WE ARE NOT IN THE LOBBY, CHANGE THE 
+		BACKGROUND COLOR ACCORDING TO SEARCHING STATUS -->
 		<div v-if="searching && !lobby" class="inner-box-primary"></div>
 		<div v-if="!searching && !lobby" class="inner-box-black"></div>
+
+		<!-- IN CASE WE ARE AT THE LOBBY ADD A CLASS WHICH MOVED THE IMAGE TOP RIGHT -->
 		<img :class="lobby ? 'lobby-background' : ''" :src="image" />
 	</div>
 </template>
@@ -25,10 +30,14 @@ export default {
 		})
 	},
 	created() {
+		// Observable for changing the background once a match was found
+		// Making it black
 		this.$nuxt.$on('found-match', () => {
 			this.setSearching(false)
 		})
 
+		// Observable for changing the background once a match was found
+		// Making it primary
 		this.$nuxt.$on('start-search', () => {
 			this.setSearching(true)
 		})

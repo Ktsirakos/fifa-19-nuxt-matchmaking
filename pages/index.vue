@@ -12,6 +12,9 @@ export default {
 	components: {
 		Background,
 		BaseNavbar
+	},
+	mounted() {
+		this.$router.push('/matchmaking-lobby')
 	}
 }
 </script>
