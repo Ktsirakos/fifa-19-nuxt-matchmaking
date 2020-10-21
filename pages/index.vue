@@ -1,6 +1,7 @@
 <template>
 	<background>
 		<base-navbar class="w-full" />
+		<nuxt-child></nuxt-child>
 	</background>
 </template>
 

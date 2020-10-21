@@ -11,6 +11,10 @@
 <script>
 export default {
 	props: {
+		/**
+		 * The type of the typography
+		 * Responsible for the font-size and line-height
+		 */
 		type: {
 			type: String,
 			default: 'normal',
@@ -25,14 +29,24 @@ export default {
 				].includes(value)
 			}
 		},
+		/**
+		 * Responsible for the color of the typography
+		 */
 		color: {
 			type: String,
 			default: 'primary'
 		},
+		/**
+		 * Responsible for the alignment
+		 */
 		align: {
 			type: String,
 			default: 'left'
 		},
+		/**
+		 * Responsible for the weight of the typography
+		 * font-weight => bold, medium,normal,light
+		 */
 		weight: {
 			type: String,
 			default: 'regular',
@@ -40,11 +54,18 @@ export default {
 				return ['bold', 'regular', 'medium', 'light'].includes(value)
 			}
 		},
+		/**
+		 * In case the user needs to register a new color once
+		 * You can use this variable!
+		 */
 		customColor: {
 			type: String
 		}
 	},
 	computed: {
+		/**
+		 * Function which assignes the classes according to props
+		 */
 		getTypographyClass() {
 			return `${this.type} ${this.color} align-${this.align} ${this.weight}`
 		}
