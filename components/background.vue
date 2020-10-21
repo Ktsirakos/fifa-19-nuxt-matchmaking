@@ -3,9 +3,9 @@
 		<div class="overlay w-full">
 			<slot></slot>
 		</div>
-		<div v-if="searching" class="inner-box-primary"></div>
-		<div v-else class="inner-box-black"></div>
-		<img :src="image" />
+		<div v-if="searching && !lobby" class="inner-box-primary"></div>
+		<div v-if="!searching && !lobby" class="inner-box-black"></div>
+		<img :class="lobby ? 'lobby-background' : ''" :src="image" />
 	</div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
 		image: {
 			type: String,
 			default: '/Image.png'
+		},
+		lobby: {
+			type: Boolean,
+			default: true
 		}
 	},
 	data() {
@@ -77,6 +81,11 @@ export default {
 		mix-blend-mode: multiply;
 		opacity: 0.8;
 		z-index: 0;
+	}
+
+	.lobby-background {
+		top: -40%;
+		left: 40%;
 	}
 
 	.overlay {
