@@ -3,6 +3,10 @@ module.exports = {
 	/*
 	 ** Headers of the page
 	 */
+	server: {
+		port: 8000, // default: 3000
+		host: '0.0.0.0' // default: localhost
+	},
 	head: {
 		title: process.env.npm_package_name || '',
 		meta: [
@@ -27,6 +31,7 @@ module.exports = {
 			}
 		]
 	},
+
 	/*
 	 ** Customize the progress-bar color
 	 */
@@ -60,7 +65,8 @@ module.exports = {
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
 		'@nuxtjs/axios',
-		'@nuxtjs/style-resources'
+		'@nuxtjs/style-resources',
+		'@nuxtjs/toast'
 	],
 	styleResources: {
 		scss: ['@/assets/scss/theming.scss']

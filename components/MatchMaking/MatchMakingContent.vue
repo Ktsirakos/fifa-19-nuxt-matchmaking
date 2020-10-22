@@ -57,10 +57,6 @@ export default {
 				{
 					id: 'cmerigunptuiae',
 					img: '/Person.png'
-				},
-				{
-					id: 'cmigunkokuiae',
-					img: '/Person.png'
 				}
 			]
 
