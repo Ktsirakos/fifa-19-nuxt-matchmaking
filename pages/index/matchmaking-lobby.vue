@@ -26,6 +26,10 @@ import LobbySettings from '@/components/MatchMaking/Lobby/LobbySettings'
 import LobbyParticipantsInfo from '@/components/MatchMaking/Lobby/LobbyParticipantsInfo'
 
 export default {
+	transition: {
+		name: 'appear',
+		mode: 'out-in'
+	},
 	components: {
 		LobbyNavBar,
 		LobbyName,

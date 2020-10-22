@@ -7,10 +7,14 @@
 		<!-- IN CASE WE ARE NOT IN THE LOBBY, CHANGE THE 
 		BACKGROUND COLOR ACCORDING TO SEARCHING STATUS -->
 		<div v-if="searching && !lobby" class="inner-box-primary"></div>
-		<div v-if="!searching && !lobby" class="inner-box-black"></div>
+		<transition name="primary-to-black">
+			<div v-if="!searching && !lobby" class="inner-box-black"></div>
+		</transition>
 
 		<!-- IN CASE WE ARE AT THE LOBBY ADD A CLASS WHICH MOVED THE IMAGE TOP RIGHT -->
-		<img :class="getClass" :src="image" />
+		<transition :key="lobby" name="background-photo-animation">
+			<img :class="getClass" :src="image" />
+		</transition>
 	</div>
 </template>
 
@@ -31,9 +35,9 @@ export default {
 		getClass() {
 			let classes = ''
 			if (this.lobby) {
-				classes = 'lobby-background'
+				classes = 'lobby-background-up'
 			} else {
-				classes = ''
+				classes = 'lobby-background-down'
 			}
 			return classes
 		}
@@ -91,40 +95,9 @@ export default {
 
 	img {
 		position: absolute;
-		top: 10%;
-		left: 40px;
 		mix-blend-mode: multiply;
 		opacity: 0.8;
 		z-index: 0;
-		animation: animation-down 0.7s;
-	}
-
-	.lobby-background {
-		top: -40%;
-		left: 40%;
-		animation: animation-up 0.7s;
-	}
-
-	@keyframes animation-up {
-		0% {
-			top: 10%;
-			left: 40px;
-		}
-		100% {
-			top: -40%;
-			left: 40%;
-		}
-	}
-
-	@keyframes animation-down {
-		100% {
-			top: 10%;
-			left: 40px;
-		}
-		0% {
-			top: -40%;
-			left: 40%;
-		}
 	}
 
 	.overlay {

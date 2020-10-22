@@ -18,13 +18,20 @@
 		</div>
 
 		<!-- IN CASE OF MATCH FOUND -->
-		<div v-else class="w-1/3 flex justify-between self-center">
-			<base-typography type="label" color="white">-0:59</base-typography>
-			<base-icon-button
-				icon="/icons/right-arrow.svg"
-				@click="$router.push('/matchmaking-lobby')"
-			></base-icon-button>
-		</div>
+		<transition name="black-to-primary">
+			<div
+				v-if="!searching"
+				class="w-1/3 flex justify-between self-center"
+			>
+				<base-typography type="label" color="white"
+					>-0:59</base-typography
+				>
+				<base-icon-button
+					icon="/icons/right-arrow.svg"
+					@click="$router.push('/matchmaking-lobby')"
+				></base-icon-button>
+			</div>
+		</transition>
 	</div>
 </template>
 

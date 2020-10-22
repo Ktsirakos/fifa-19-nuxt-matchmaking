@@ -12,7 +12,10 @@ import { mapMutations } from 'vuex'
 import BlackBox from '@/components/BlackBox'
 import MatchMakingInfo from '@/components/MatchMaking/MatchMakingInfo'
 export default {
-	transition: 'appear',
+	transition: {
+		name: 'appear',
+		mode: 'out-in'
+	},
 	components: {
 		BlackBox,
 		MatchMakingInfo
@@ -24,13 +27,21 @@ export default {
 		}
 	},
 	mounted() {
+		this.$toast.show(
+			'Automatic timer to simulate finding a match. Please wait 4 seconds',
+			{
+				duration: 2500,
+				position: 'bottom-center'
+			}
+		)
+
 		this.setLobby(false)
 
 		// Timeout  for testing purposes which finds a match in 3 seconds
 		this.timeOut = setTimeout(() => {
 			this.searching = false
 			this.$nuxt.$emit('found-match')
-		}, 3000)
+		}, 4000)
 	},
 	methods: {
 		...mapMutations({
@@ -47,14 +58,5 @@ export default {
 <style lang="scss" scoped>
 .matchmaking-lobby-searching {
 	position: relative;
-}
-
-.appear-enter-active,
-.appear-leave-active {
-	transition: opacity 0.5s;
-}
-.appear-enter,
-.appear-leave-active {
-	opacity: 0;
 }
 </style>
