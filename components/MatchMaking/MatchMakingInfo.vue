@@ -18,11 +18,17 @@
 				caption="By tapping accept, you agree to play a match that may last for up to 30 minutes."
 			/>
 		</transition>
-		<footer-bar :searching="searching" @cancel="$emit('cancel')" />
+		<footer-bar
+			:max-time-to-accept="settings.maxTimeToAccept"
+			:searching="searching"
+			@timer-ended="$emit('timer-ended')"
+			@cancel="$emit('cancel')"
+		/>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import FooterBar from '@/components/MatchMaking/FooterBar'
 import MatchMakingContent from '@/components/MatchMaking/MatchMakingContent'
 export default {
@@ -35,6 +41,11 @@ export default {
 			type: Boolean,
 			default: false
 		}
+	},
+	computed: {
+		...mapGetters({
+			settings: 'application/settings'
+		})
 	}
 }
 </script>

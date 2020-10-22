@@ -8,13 +8,15 @@
 <script>
 import Background from '@/components/background'
 import BaseNavbar from '@/components/BaseComponents/BaseNavbar'
+import settings from '@/assets/application_configuration.json'
 export default {
 	components: {
 		Background,
 		BaseNavbar
 	},
-	created() {
+	mounted() {
 		this.$router.push('/matchmaking-lobby')
+		this.$store.commit('application/setSettings', settings)
 	}
 }
 </script>

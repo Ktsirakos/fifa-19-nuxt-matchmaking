@@ -12,9 +12,7 @@
 		</transition>
 
 		<!-- IN CASE WE ARE AT THE LOBBY ADD A CLASS WHICH MOVED THE IMAGE TOP RIGHT -->
-		<transition :key="lobby" name="background-photo-animation">
-			<img :class="getClass" :src="image" />
-		</transition>
+		<img :class="getClass" :src="image" />
 	</div>
 </template>
 

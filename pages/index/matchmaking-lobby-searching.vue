@@ -1,9 +1,16 @@
 <template>
 	<div class="matchmaking-lobby-searching flex">
-		<match-making-info :searching="searching" @cancel="goToLobby" />
+		<!-- ARROW ON TOP OF THE RECTANGLE -->
 		<black-box>
 			<base-icon-button icon="/icons/left-arrow.svg" @click="goToLobby" />
 		</black-box>
+
+		<!-- CONTENTS OF MATCHMAKING INFORMATINO -->
+		<match-making-info
+			:searching="searching"
+			@timer-ended="goToLobby"
+			@cancel="goToLobby"
+		/>
 	</div>
 </template>
 
