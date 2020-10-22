@@ -12,6 +12,7 @@ import { mapMutations } from 'vuex'
 import BlackBox from '@/components/BlackBox'
 import MatchMakingInfo from '@/components/MatchMaking/MatchMakingInfo'
 export default {
+	transition: 'appear',
 	components: {
 		BlackBox,
 		MatchMakingInfo
@@ -46,5 +47,14 @@ export default {
 <style lang="scss" scoped>
 .matchmaking-lobby-searching {
 	position: relative;
+}
+
+.appear-enter-active,
+.appear-leave-active {
+	transition: opacity 0.5s;
+}
+.appear-enter,
+.appear-leave-active {
+	opacity: 0;
 }
 </style>

@@ -1,19 +1,23 @@
 <template>
 	<div class="matchmaking-container">
-		<match-making-content
-			v-if="searching"
-			content-title="Matchmaking Lobby"
-			title="Searching for compatible opponents"
-			subtitle="We’re searching our database of players to pair you with an opponent of similar skill"
-			caption="4000 in queue"
-		/>
-		<match-making-content
-			v-else
-			content-title="Matchmaking Lobby"
-			title="A match has been found for you!"
-			subtitle="We’ve found a compatible opponent for you to play Squad Battles with in FIFA 19"
-			caption="By tapping accept, you agree to play a match that may last for up to 30 minutes."
-		/>
+		<transition name="fade">
+			<match-making-content
+				v-if="searching"
+				content-title="Matchmaking Lobby"
+				title="Searching for compatible opponents"
+				subtitle="We’re searching our database of players to pair you with an opponent of similar skill"
+				caption="4000 in queue"
+			/>
+		</transition>
+		<transition name="fade">
+			<match-making-content
+				v-if="!searching"
+				content-title="Matchmaking Lobby"
+				title="A match has been found for you!"
+				subtitle="We’ve found a compatible opponent for you to play Squad Battles with in FIFA 19"
+				caption="By tapping accept, you agree to play a match that may last for up to 30 minutes."
+			/>
+		</transition>
 		<footer-bar :searching="searching" @cancel="$emit('cancel')" />
 	</div>
 </template>
@@ -56,5 +60,13 @@ export default {
 	&.primary {
 		background: $primary;
 	}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-active /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0;
 }
 </style>

@@ -10,7 +10,7 @@
 		<div v-if="!searching && !lobby" class="inner-box-black"></div>
 
 		<!-- IN CASE WE ARE AT THE LOBBY ADD A CLASS WHICH MOVED THE IMAGE TOP RIGHT -->
-		<img :class="lobby ? 'lobby-background' : ''" :src="image" />
+		<img :class="getClass" :src="image" />
 	</div>
 </template>
 
@@ -27,7 +27,16 @@ export default {
 		...mapGetters({
 			searching: 'matchmaking/searching',
 			lobby: 'matchmaking/lobby'
-		})
+		}),
+		getClass() {
+			let classes = ''
+			if (this.lobby) {
+				classes = 'lobby-background'
+			} else {
+				classes = ''
+			}
+			return classes
+		}
 	},
 	created() {
 		// Observable for changing the background once a match was found
@@ -87,11 +96,35 @@ export default {
 		mix-blend-mode: multiply;
 		opacity: 0.8;
 		z-index: 0;
+		animation: animation-down 0.7s;
 	}
 
 	.lobby-background {
 		top: -40%;
 		left: 40%;
+		animation: animation-up 0.7s;
+	}
+
+	@keyframes animation-up {
+		0% {
+			top: 10%;
+			left: 40px;
+		}
+		100% {
+			top: -40%;
+			left: 40%;
+		}
+	}
+
+	@keyframes animation-down {
+		100% {
+			top: 10%;
+			left: 40px;
+		}
+		0% {
+			top: -40%;
+			left: 40%;
+		}
 	}
 
 	.overlay {

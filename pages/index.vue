@@ -13,7 +13,7 @@ export default {
 		Background,
 		BaseNavbar
 	},
-	mounted() {
+	created() {
 		this.$router.push('/matchmaking-lobby')
 	}
 }
