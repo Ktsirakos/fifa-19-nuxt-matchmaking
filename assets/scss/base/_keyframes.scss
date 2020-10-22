@@ -1,0 +1,34 @@
+//Keyframes for turning primary color to black
+@keyframes primary-to-black {
+    0% {
+        background: $primary;
+    }
+    100% {
+        background: $black;
+    }
+}
+
+
+//Animations for send the background athlete 
+//image to top right corner and middle
+@keyframes animation-up {
+    0% {
+        top: 10%;
+        left: 40px;
+    }
+    100% {
+        top: -40%;
+        left: 40%;
+    }
+}
+
+@keyframes animation-down {
+    100% {
+        top: 10%;
+        left: 40px;
+    }
+    0% {
+        top: -40%;
+        left: 40%;
+    }
+}

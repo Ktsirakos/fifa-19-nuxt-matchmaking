@@ -1,0 +1,44 @@
+@import "keyframes";
+
+
+//Duration control center
+//Change the durations in order to quickly configure the animation
+$background-up-down: 0.7s;
+$appear: 0.1s;
+$color-change-lobby: 0.3s;
+
+
+
+//Transition for being used with name 'primary-to-black' with nuxt transition tag
+.primary-to-black-enter-active {
+    animation: primary-to-black $color-change-lobby;
+}
+
+//Transition for being used with name 'black-to-primary' with nuxt transition tag
+.black-to-primary-enter-active {
+    animation: primary-to-black $color-change-lobby reverse;
+}
+
+//Transition to be used with name 'appear' with nuxt transition tag
+.appear-enter-active,
+.appear-leave-active {
+	transition: opacity $appear;
+}
+.appear-enter,
+.appear-leave-active {
+	opacity: 0;
+}
+
+
+//Animations for moving the backgroudn image up and down
+.lobby-background-down {
+    top: 10%;
+    left: 40px;
+    animation: animation-down $background-up-down;
+}
+
+.lobby-background-up {
+    top: -40%;
+    left: 40%;
+    animation: animation-up $background-up-down;
+}
